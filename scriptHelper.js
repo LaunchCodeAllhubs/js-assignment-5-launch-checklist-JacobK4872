@@ -27,6 +27,27 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+    console.log("function is being called")
+    let submissions = [pilot, copilot, fuelLevel, cargoLevel];
+    
+    for (let i = 0; i < submissions.length; i++) {
+        if (validateInput(submissions[i]) === "Empty") {
+            alert("Please fill out all fields.");
+            break;
+        }
+    }
+
+    if (validateInput(fuelLevel) === "Not a Number") {
+        alert("Please put correct type of value for Fuel Level.");
+    } else if (validateInput(cargoLevel) === "Not a Number") {
+        alert("Please put correct type of value for Cargo Mass.");
+    }
+
+    if (validateInput(pilot) === "Is a Number") {
+        alert("Please put correct type of value for Pilot.");
+    } else if (validateInput(copilot) === "Is a Number") {
+        alert("Please put correct type of value for Copilot.");
+    }
 
 }
 
