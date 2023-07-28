@@ -64,22 +64,38 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
     // checks fuel level and cargo level and updates faulty lsit
     if (Number(fuelLevel) < 10000) {
-        console.log("AAAAAAAAAAAA");
+ 
+        if (Number(cargoLevel) > 10000) {
+            cargoStatus.innerHTML = "Cargo mass too heavy for launch";
+        } else {
+            cargoStatus.innerHTML = "Cargo mass low enough for launch";
+        }
+    
         fuelStatus.innerHTML = "Fuel level too low for launch";
         launchStatus.innerHTML = "Shuttle Not Ready for Launch";
         launchStatus.style.color = "rgb(199, 37, 78)";
         list.style.visibility = "visible";
+
     } else if (Number(cargoLevel) > 10000) {
+        
+        if (Number(fuelLevel) < 10000) {
+            fuelStatus.innerHTML = "Fuel level too low for launch";
+        } else {
+            fuelStatus.innerHTML = "Fuel level high enough for launch";
+        }
+        
         cargoStatus.innerHTML = "Cargo mass too heavy for launch";
+        fuelStatus.innerHTML = "Fuel level high enough for launch";
         launchStatus.innerHTML = "Shuttle Not Ready for Launch";
         launchStatus.style.color = "rgb(199, 37, 78)";
         list.style.visibility = "visible";
+
     } else if (Number(fuelLevel) > 10000 && Number(cargoLevel) < 10000) {
-        list.style.visibility = "visible";
         cargoStatus.innerHTML = "Cargo mass low enough for launch";
         fuelStatus.innerHTML = "Fuel level high enough for launch";
         launchStatus.style.color = "rgb(65, 159, 106)";
         launchStatus.innerHTML = "Shuttle is Ready for Launch";
+        list.style.visibility = "visible";
     }
 }
 
