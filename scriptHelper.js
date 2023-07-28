@@ -47,16 +47,16 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
     // Sees if fuel level and cargo level are numbers
     if (validateInput(fuelLevel) === "Not a Number") {
-        alert("Please put correct type of value for Fuel Level.");
+        alert("Please put correct type of value (Number) for Fuel Level.");
     } else if (validateInput(cargoLevel) === "Not a Number") {
-        alert("Please put correct type of value for Cargo Mass.");
+        alert("Please put correct type of value (Number) for Cargo Mass.");
     }
 
     // Sees if pilot and co pilot are strings
     if (validateInput(pilot) === "Is a Number") {
-        alert("Please put correct type of value for Pilot.");
+        alert("Please put correct type of value (String) for Pilot.");
     } else if (validateInput(copilot) === "Is a Number") {
-        alert("Please put correct type of value for Copilot.");
+        alert("Please put correct type of value (String) for Copilot.");
     } else {
         pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
         copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
@@ -90,7 +90,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         launchStatus.style.color = "rgb(199, 37, 78)";
         list.style.visibility = "visible";
 
-    } else if (Number(fuelLevel) > 10000 && Number(cargoLevel) < 10000) {
+    } else if (Number(cargoLevel) < 10000 && Number(fuelLevel) > 10000) {
+        console.log("Testing is this working");
         cargoStatus.innerHTML = "Cargo mass low enough for launch";
         fuelStatus.innerHTML = "Fuel level high enough for launch";
         launchStatus.style.color = "rgb(65, 159, 106)";

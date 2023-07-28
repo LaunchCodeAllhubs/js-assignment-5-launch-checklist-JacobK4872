@@ -9,13 +9,7 @@ window.addEventListener("load", function () {
         let fuelLevel = document.getElementById("fuelLevel").value;
         // let cargoMass = document.getElementById("cargoMass").value;
         let cargoMass = document.getElementsByName("cargoMass")[0].value;
-        
-        let pilotStatus = document.getElementById("pilotStatus");
-        let copilotStatus = document.getElementById("copilotStatus");
-        
         let list = document.getElementById("faultyItems");
-        let launchStatus = document.getElementById("launchStatus");
-        let cargoStatus = document.getElementById("cargoStatus");
         
         // faultyItemsList.style.visibility = "visible";
         
