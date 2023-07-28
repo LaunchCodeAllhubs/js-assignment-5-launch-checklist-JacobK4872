@@ -27,15 +27,18 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    console.log("function is being called")
+    console.log("function is being called");
+
     let submissions = [pilot, copilot, fuelLevel, cargoLevel];
-    
+
     for (let i = 0; i < submissions.length; i++) {
         if (validateInput(submissions[i]) === "Empty") {
             alert("Please fill out all fields.");
             break;
-        }
+        } 
     }
+    
+   
 
     if (validateInput(fuelLevel) === "Not a Number") {
         alert("Please put correct type of value for Fuel Level.");
@@ -49,7 +52,10 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         alert("Please put correct type of value for Copilot.");
     }
 
+    
 }
+
+
 
 async function myFetch() {
     let planetsReturned;
