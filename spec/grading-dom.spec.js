@@ -89,7 +89,9 @@ describe ("GRADING DOM MANIPULATION TEST: ", function () {
 
    it("Launch Checklist when cargo too heavy and fuel too low for launch", function() {
      // Shuttle should not be ready for launch, cargo too high, fuel too low
+     
      studentFunctions.formSubmission(window.document, list, "Chris", "Bob", 0, 100000);
+     console.log("test" + JSON.stringify(h2));
      expect(list.style.visibility).toEqual("visible");
      expect(h2.style.color).toEqual("rgb(199, 37, 78)");
      expect(h2.textContent).toEqual("Shuttle Not Ready for Launch");
@@ -98,7 +100,7 @@ describe ("GRADING DOM MANIPULATION TEST: ", function () {
      expect(fuelStatus.textContent).toEqual("Fuel level too low for launch");
      expect(cargoStatus.textContent).toEqual("Cargo mass too heavy for launch");
 
-   })
+    })
 
    it("Launch Checklist when everything is good to go", function() { 
      // Shuttle should be ready for launch, enough fuel and cargo
@@ -126,5 +128,5 @@ describe ("GRADING DOM MANIPULATION TEST: ", function () {
      expect(script.includes("myFetch(")).toBeTrue;
      expect(script.includes("pickPlanet(")).toBeTrue;
      expect(script.includes("addDestinatonInfo(")).toBeTrue;
-   })
+  })
 });
