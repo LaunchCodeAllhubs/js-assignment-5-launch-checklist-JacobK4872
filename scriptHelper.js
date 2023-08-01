@@ -52,9 +52,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let submissions = [pilot, copilot, fuelLevel, cargoLevel];
     for (let i = 0; i < submissions.length; i++) {
         if (validateInput(submissions[i]) === "Empty") {
-            alert("Please fill out all fields.");
-            break;
-        }
+             return alert("Please fill out all fields.");
+        }  
     }
 
     // Sees if fuel level and cargo level are numbers
